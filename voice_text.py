@@ -34,7 +34,7 @@ class voice_text:
 			if question['data']['text'] == '拜拜':
 				test = '呜呜呜，拜拜啦，你要快点来找我玩哦，不然我会孤独的，哭哭'
 				print(test)
-				v.text_to_voice(test)
+				self.text_to_voice(test)
 				break
 			answer = self.chat.chat(question['data']['text'],debug = False )
 			print('      ---> ',answer)
@@ -122,11 +122,14 @@ class voice_text:
 #	isplay: 是否直接播放
 #	debug: 是否调试
 # 返回值：返回响应数据的json格式 需要的内容是['data']['speech']，是base64编码数据
-	def text_to_voice(self,text, speaker = 6 , format = 2 , volume = 0, speed = 100 , aht = 0 , apc = 58 , url = 'lab',isplay = True,debug = False):
+	def text_to_voice(self,text, speaker = 6 , format = 2 , volume = 0, speed = 100 , aht = 0 , apc = 58 , url = 'lab',isplay = True,debug = False,filepath = ''):
 		url_request = self.url_Lab
 		format = self.format
 		# 替换掉字符~，不然输出的时候出bug
 		text.replace('~',',')
+		text.replace('；','。')
+		text.replace('“',',')
+		text.replace('”',',')
 		if url == 'youtu':
 			url_request = self.url_youtu
 		time_stamp = self.inter.get_time_stamp()
@@ -203,9 +206,11 @@ class voice_text:
 		answer = r.json()
 		if debug:
 			print('test_to_voice response data:' , answer)
+		
 		localtime = time.localtime(time.time())
 		filename = './' + str(localtime[0]) + str(localtime[1]) + str(localtime[2]) + str(localtime[3]) + str(localtime[4]) + str(localtime[5])
-		 
+		if filepath:
+			filename = filepath
 		self.ToFile( answer['data']['speech'] , filename + tuozhan )
 		if isplay:
 			playsound(filename + tuozhan)

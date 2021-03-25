@@ -18,7 +18,7 @@ def main():
 		if a:
 			v.text_to_voice(a)
 def talkWithRobot():
-	v = voice_text(2159946356,'V5UoIbRZGBF9CNJ1')
+	v = voice_text.voice_text(2159946356,'V5UoIbRZGBF9CNJ1')
 	v.speek_with_robot()
 if __name__ == '__main__':
 	# main() # 打字进行交流
