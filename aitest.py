@@ -1,8 +1,8 @@
 ﻿import voice_text
 import Smart_Chat
 
-id = 2159946356
-key = 'V5UoIbRZGBF9CNJ1'
+id = 2111111111111111111
+key = 'Vxxxxxxxxxxxxxxxxxx'
 
 def main():
 	v = voice_text.voice_text(id, key)

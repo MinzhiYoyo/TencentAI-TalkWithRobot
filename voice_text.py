@@ -241,7 +241,7 @@ class voice_text:
 # ToFile("./desk_base64.txt",'desk_cp_by_base64.jpg')  # base64编码转换为二进制文件
 
 if __name__ == '__main__':
-	v = voice_text(2159946356,'V5UoIbRZGBF9CNJ1')
+	v = voice_text(21111111111,'Vxxxxxxxx')
 	v.speek_with_robot()
 
 	# v.ToFile('itiscool','./test.txt')

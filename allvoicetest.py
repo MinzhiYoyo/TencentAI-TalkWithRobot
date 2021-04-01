@@ -1,7 +1,7 @@
 ﻿import voice_text
 
-id = 2159946356
-key = 'V5UoIbRZGBF9CNJ1'
+id = 2111111111111111111
+key = 'Vxxxxxxxxxxxxxxxx'
 
 v = voice_text.voice_text(id, key)
 
